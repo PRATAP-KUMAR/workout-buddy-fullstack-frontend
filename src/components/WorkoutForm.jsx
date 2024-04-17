@@ -36,8 +36,8 @@ function WorkoutForm() {
     }
 
     return (
-        <form className="flex flex-col bg-cyan-400 p-5" onSubmit={handleSubmit}>
-            <h3 className="text-center">Add a New Workout</h3>
+        <form className="flex flex-col space-y-3 w-full p-5" onSubmit={handleSubmit}>
+            <h3 className="text-center font-bold max-sm:hidden">Add a New Workout</h3>
             <label>Excersize Title: </label>
             <input
                 type="text"
