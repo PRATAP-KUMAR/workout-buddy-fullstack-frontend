@@ -2,7 +2,6 @@ import { createContext, useReducer } from "react";
 import PropTypes from 'prop-types';
 import workoutsReducer from "../reducers/workoutReducer";
 
-
 export const WorkoutsContext = createContext();
 
 export const WorkoutsContextProvider = ({ children }) => {
