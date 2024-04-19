@@ -1,16 +1,23 @@
 import { useWorkoutsContext } from "../hooks/useWorkoutsContext";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { formatDistanceToNow } from 'date-fns/formatDistanceToNow';
+import { useAuthContext } from "../hooks/useAuthContext";
 
 function WorkoutDetails(props) {
     const { dispatch } = useWorkoutsContext();
+    const { user } = useAuthContext();
 
     let obj = props;
     let { title, load, reps, createdAt, _id } = obj.workout;
 
     const handleClick = async () => {
+        if (!user) return;
+
         const response = await fetch('http://localhost:4000/api/workouts/' + _id, {
-            method: 'DELETE'
+            method: 'DELETE',
+            headers: {
+                'Authorization': `Bearer ${user.token}`
+            }
         })
         const json = await response.json();
 
