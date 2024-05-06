@@ -12,23 +12,25 @@ function Login() {
     }
 
     return (
-        <div className="flex flex-col min-h-[calc(100vh-4rem)] items-center justify-center 2xl:flex-row border-2 border-red-500">
-            <div className='flex bg-cyan-500 flex-col items-center h-1/2 border-2 border-red-500 justify-center'>
+        <div className="flex flex-col min-h-[calc(100vh-4rem)] items-center justify-start 2xl:flex-row">
+            <div className='flex flex-col items-center justify-center 2xl:w-1/3'>
                 <img
-                    className="w-96 border-2  border-green-500"
+                    className="w-96"
                     src="images/Wavy_Gen-01_Single-07.jpg"
                     alt="Login Photo"
                 />
-                <a href="https://www.freepik.com/free-vector/user-verification-unauthorized-access-prevention-private-account-authentication-cyber-security-people-entering-login-password-safety-measures_12146011.htm#query=login&position=6&from_view=keyword&track=sph&uuid=4e1235ce-aea3-478b-a2ae-0ab3e2b4f72f" className='text-red-500'>Image by vectorjuice</a> on Freepik
+                <a
+                    className='text-blue-500 text-xs'
+                    href="https://www.freepik.com/free-vector/user-verification-unauthorized-access-prevention-private-account-authentication-cyber-security-people-entering-login-password-safety-measures_12146011.htm#query=login&position=6&from_view=keyword&track=sph&uuid=4e1235ce-aea3-478b-a2ae-0ab3e2b4f72f">Image by vectorjuice on Freepik
+                </a>
             </div>
-            <form onSubmit={handleSubmit} className='h-1/2 max-w-7xl 2xl:min-h-[calc(100vh-4rem)] flex flex-col justify-start p-10 w-full bg-light 2xl:w-2/3 space-y-5 items-center mx-auto bg-green-200'>
+            <form onSubmit={handleSubmit} className='flex-1 2xl:min-h-[calc(100vh-4rem)] flex flex-col w-full bg-orange-500 2xl:w-2/3 space-y-5 items-center justify-center mx-auto'>
                 <input
                     type='email'
                     onChange={(e) => setEmail(e.target.value)}
                     value={email}
                     placeholder='Email'
                 />
-
                 <input
                     type='password'
                     onChange={(e) => setPassword(e.target.value)}
