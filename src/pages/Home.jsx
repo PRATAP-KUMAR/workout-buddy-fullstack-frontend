@@ -33,7 +33,7 @@ function Home() {
     }, [dispatch, user])
 
     return (
-        <div className="max-sm:flex-col max-sm:space-x-0  sm:justify-center space-y-5 flex space-x-5 p-5 bg-gray-300 min-h-[calc(100vh-4rem)]">
+        <div className="max-sm:flex-col max-sm:space-x-0  sm:justify-center space-y-5 flex space-x-5 p-5 bg-lite min-h-[calc(100vh-4rem)]">
             <div className="w-full max-sm:block hidden ">
                 <button onClick={triggerForm} className="btn-blue w-full">
                     <div className="flex items-center justify-between">

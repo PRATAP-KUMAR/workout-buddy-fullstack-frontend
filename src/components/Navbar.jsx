@@ -11,7 +11,7 @@ function Navbar() {
     }
 
     return (
-        <header className="bg-gray-900 w-full sticky top-0 z-50">
+        <header className="bg-toodark w-full sticky top-0 z-50">
             <nav className='flex justify-between items-center h-16 mx-5 '>
                 <div className="text-white font-bold text-2xl">
                     <Link to="/">Workout Buddy</Link>
@@ -19,13 +19,13 @@ function Navbar() {
                 {user && (
                     <div className="space-x-5 text-white">
                         <span>{user.email}</span>
-                        <button onClick={onLogout} className="btn-blue">Logout</button>
+                        <button onClick={onLogout} className="button">Logout</button>
                     </div>
                 )}
                 {!user && (
                     <div className="space-x-5 text-white">
-                        <Link className="btn-blue" to="/login">Login</Link>
-                        <Link className="btn-blue" to="/signup">Signup</Link>
+                        <Link className="button" to="/login">Login</Link>
+                        <Link className="button" to="/signup">Signup</Link>
                     </div>
                 )}
             </nav>

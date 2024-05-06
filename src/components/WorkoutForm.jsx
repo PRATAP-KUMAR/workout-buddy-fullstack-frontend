@@ -47,7 +47,7 @@ function WorkoutForm() {
     }
 
     return (
-        <form className="flex flex-col space-y-3 w-full p-5" onSubmit={handleSubmit}>
+        <form className="flex flex-col bg-dark space-y-3 w-full p-5" onSubmit={handleSubmit}>
             <h3 className="text-center font-bold max-sm:hidden">Add a New Workout</h3>
             <label>Excersize Title: </label>
             <input
@@ -67,7 +67,7 @@ function WorkoutForm() {
                 onChange={(e) => setReps(e.target.value)}
                 value={reps}
             />
-            <button className="btn-blue w-fit mt-5">Add Workout</button>
+            <button className="button w-fit mt-5">Add Workout</button>
             {error && <div className="text-red-500">{error}</div>}
         </form>
     )

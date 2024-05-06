@@ -7,7 +7,7 @@ input {
 }
 
 @layer components {
-    .btn-blue {
-        @apply bg-blue-500 hover:bg-blue-700 text-sm text-white font-bold py-2 px-4 rounded;
+    .button {
+        @apply bg-lite hover:bg-toodark hover:text-lite text-lg text-toodark font-bold py-2 px-4 rounded;
     }
 }
