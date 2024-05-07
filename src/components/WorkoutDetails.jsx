@@ -27,7 +27,7 @@ function WorkoutDetails(props) {
     }
 
     return (
-        <div className="bg-white p-5 border-2 flex flex-col space-y-2 relative shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,_rgba(0,0,0,0.3)_0px_3px_7px_-3px]">
+        <div className="bg-dark text-white p-5 border-2 flex flex-col space-y-2 relative shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,_rgba(0,0,0,0.3)_0px_3px_7px_-3px]">
             <h4 className="font-bold text-lg">{title}</h4>
             <p>Load (Kg): {load}</p>
             <p>Reps: {reps}</p>

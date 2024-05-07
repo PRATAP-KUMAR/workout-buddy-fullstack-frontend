@@ -10,6 +10,10 @@ export default {
         lite: "#EFF9F0",
         dark: "#00A7E1",
         toodark: "#003459"
+      },
+      fontFamily: {
+        sans: ['"tajawal"', "sans-serif"],
+        josefin: ['"josefin-sans"', "sans-serif"]
       }
     },
   },

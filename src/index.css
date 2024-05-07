@@ -1,6 +1,9 @@
+@import url("https://use.typekit.net/lgl1pfh.css");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 
 input {
     outline: none;
