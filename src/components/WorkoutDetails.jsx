@@ -28,11 +28,11 @@ function WorkoutDetails(props) {
 
     return (
         <div className="bg-dark text-white p-5 border-2 flex flex-col space-y-2 relative shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,_rgba(0,0,0,0.3)_0px_3px_7px_-3px]">
-            <h4 className="font-bold text-lg">{title}</h4>
+            <h4 className="font-bold text-lg text-toodark">{title}</h4>
             <p>Load (Kg): {load}</p>
             <p>Reps: {reps}</p>
-            <p>{formatDistanceToNow(new Date(createdAt), { addSuffix: true })}</p>
-            <button className='absolute top-5 right-5 hover:text-blue-500 text-orange-400' onClick={handleClick}><RiDeleteBin6Line fontSize={24} />
+            <p className="text-toodark">{formatDistanceToNow(new Date(createdAt), { addSuffix: true })}</p>
+            <button className='absolute top-5 right-5 hover:text-white text-toodark' onClick={handleClick}><RiDeleteBin6Line fontSize={24} />
             </button>
         </div>
     )

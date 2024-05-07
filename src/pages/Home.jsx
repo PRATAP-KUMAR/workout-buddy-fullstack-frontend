@@ -3,6 +3,8 @@ import WorkoutDetails from "../components/WorkoutDetails";
 import WorkoutForm from "../components/WorkoutForm";
 import { useWorkoutsContext } from "../hooks/useWorkoutsContext";
 import { useAuthContext } from "../hooks/useAuthContext";
+import { CiMinimize1 } from "react-icons/ci";
+import { IoMdAdd } from "react-icons/io";
 
 function Home() {
     const { workouts, dispatch } = useWorkoutsContext();
@@ -36,8 +38,13 @@ function Home() {
         <div className="max-sm:flex-col max-sm:space-x-0  sm:justify-center space-y-5 flex space-x-5 p-5 bg-lite min-h-[calc(100vh-4rem)]">
             <div className="w-full max-sm:block hidden ">
                 <button onClick={triggerForm} className="btn-blue w-full">
-                    <div className="flex items-center justify-between">
-                        Add a Workout {open ? <span className="text-3xl">-</span> : <span className="text-3xl">+</span>}
+                    <div className="flex items-center justify-between bg-toodark text-white p-4 font-bold">
+                        Add a Workout {
+                            open ?
+                                <span><CiMinimize1 fontSize={24} /></span>
+                                :
+                                <span><IoMdAdd fontSize={24} /></span>
+                        }
                     </div>
                 </button>
                 <div className="flex justify-center w-full sm:hidden">

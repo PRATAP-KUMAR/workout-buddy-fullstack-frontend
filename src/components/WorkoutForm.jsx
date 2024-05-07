@@ -48,17 +48,17 @@ function WorkoutForm() {
     }
 
     return (
-        <form className="flex flex-col bg-toodark space-y-3 w-full p-5" onSubmit={handleSubmit}>
+        <form className="flex flex-col bg-toodark border-t border-dark space-y-3 w-full p-5" onSubmit={handleSubmit}>
             <h3 className="text-center text-white font-bold font-josefin max-sm:hidden">Add a New Workout</h3>
-            <label className="text-white">ET</label>
+            <label className="text-white">Exercise Title</label>
             <select
                 className="border-none outline-none border-dark"
                 name="workouts"
                 onChange={(e) => setTitle(e.target.value)}>
-                <option defaultValue={""}>Select workout from the dropdown</option>
+                <option defaultValue={""} hidden className="font-josefin">Select a Workout</option>
                 {
                     gymWorkoutNames.map(workout => (
-                        <option value={workout} key={workout}>{workout}</option>
+                        <option className="font-josefin p-2" value={workout} key={workout}>{workout}</option>
                     ))
                 }
             </select>
