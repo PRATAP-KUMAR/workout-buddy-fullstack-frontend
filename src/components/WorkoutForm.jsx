@@ -52,10 +52,10 @@ function WorkoutForm() {
             <h3 className="text-center text-white font-bold font-josefin max-sm:hidden">Add a New Workout</h3>
             <label className="text-white">Exercise Title</label>
             <select
-                className="border-none outline-none border-dark"
+                className="border-none outline-none border-dark px-2 py-1"
                 name="workouts"
                 onChange={(e) => setTitle(e.target.value)}>
-                <option defaultValue={""} hidden className="font-josefin">Select a Workout</option>
+                <option defaultValue={""} hidden className="font-josefin px-2 py-1">Select a Workout</option>
                 {
                     gymWorkoutNames.map(workout => (
                         <option className="font-josefin p-2" value={workout} key={workout}>{workout}</option>
@@ -69,6 +69,7 @@ function WorkoutForm() {
                 max={100}
                 onChange={(e) => setLoad(e.target.value)}
                 value={load}
+                className="px-2 py-1"
             />
             <label className="text-white">Repetations: </label>
             <input
@@ -77,6 +78,7 @@ function WorkoutForm() {
                 max={20}
                 onChange={(e) => setReps(e.target.value)}
                 value={reps}
+                className="px-2 py-1"
             />
             <button className="button w-fit mt-5">Add Workout</button>
             {error && <div className="text-red-500">{error}</div>}
