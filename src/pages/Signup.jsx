@@ -66,7 +66,7 @@ function Signup() {
                             placeholder='Password'
                             className='w-full h-12 pl-2 focus:ring-1 focus:ring-toodark caret-toodark placeholder-dark'
                         />
-                        <button disabled={isLoading} className='button'>Login</button>
+                        <button disabled={isLoading} className='button'>Signup</button>
                         {error && <div className='text-red-500'>{error}</div>}
                     </form>
                 </div >
