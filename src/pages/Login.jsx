@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useLogin } from '../hooks/useLogin';
 import ErrorPage from './ErrorPage';
+import API from '../../api';
 
 function Login() {
     const [email, setEmail] = useState('');
@@ -19,7 +20,7 @@ function Login() {
         const checkBackend = async () => {
             try {
                 setLoading(true);
-                const response = await fetch('http://localhost:4000/api/test');
+                const response = await fetch(`${API}/api/test/`);
                 const json = await response.json();
                 console.log(json.message);
                 setLoading(false);

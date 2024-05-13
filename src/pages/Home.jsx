@@ -6,6 +6,7 @@ import { useAuthContext } from "../hooks/useAuthContext";
 import { CiMinimize1 } from "react-icons/ci";
 import { IoMdAdd } from "react-icons/io";
 import ErrorPage from "./ErrorPage";
+import API from "../../api";
 
 function Home() {
     const { workouts, dispatch } = useWorkoutsContext();
@@ -20,7 +21,7 @@ function Home() {
     useEffect(() => {
         const fetchWorkouts = async () => {
             try {
-                const response = await fetch('http://localhost:4000/api/workouts', {
+                const response = await fetch(`${API}/api/workouts/`, {
                     headers: {
                         'Authorization': `Bearer ${user.token}`
                     }

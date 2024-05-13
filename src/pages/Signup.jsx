@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useSignup } from '../hooks/useSignup';
 import ErrorPage from './ErrorPage';
+import API from '../../api';
 
 function Signup() {
     const [email, setEmail] = useState('');
@@ -17,7 +18,7 @@ function Signup() {
     useEffect(() => {
         const checkBackend = async () => {
             try {
-                const response = await fetch('http://localhost:4000/api/test');
+                const response = await fetch(`${API}/api/test/`);
                 const json = await response.json();
                 console.log(json.message);
             } catch (error) {
