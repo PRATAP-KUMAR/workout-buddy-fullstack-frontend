@@ -18,7 +18,9 @@ function Signup() {
     useEffect(() => {
         const checkBackend = async () => {
             try {
-                const response = await fetch(`${API}/api/test/`);
+                const response = await fetch(`${API}/api/test/`, {
+                    mode: 'no-cors'
+                });
                 const json = await response.json();
                 console.log(json.message);
             } catch (error) {
