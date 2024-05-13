@@ -1,6 +1,5 @@
 {
   "name": "frontend",
-  "proxy": "https://workout-mern-backend-ohg1fwteu-pratap-kumar1s-projects.vercel.app",
   "private": true,
   "version": "0.0.0",
   "type": "module",
