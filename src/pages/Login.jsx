@@ -20,7 +20,9 @@ function Login() {
         const checkBackend = async () => {
             try {
                 setLoading(true);
-                const response = await fetch(`${API}/api/test/`);
+                const response = await fetch(`${API}/api/test/`, {
+                    mode: 'no-cors'
+                });
                 const json = await response.json();
                 console.log(json.message);
                 setLoading(false);
