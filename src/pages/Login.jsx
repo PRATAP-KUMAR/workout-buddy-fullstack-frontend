@@ -31,7 +31,7 @@ function Login() {
                 setError(error);
             }
         }
-        checkBackend();
+        // checkBackend();
     }, [])
 
     return (
