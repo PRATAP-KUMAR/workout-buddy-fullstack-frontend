@@ -7,6 +7,8 @@ export const useLogin = () => {
     const [isLoading, setIsLoading] = useState(null);
     const { dispatch } = useAuthContext();
 
+    const headers = new Headers();
+
     const login = async (email, password) => {
         setIsLoading(true);
         setError(null);
@@ -14,7 +16,10 @@ export const useLogin = () => {
         try {
             const response = await fetch(`${API}/api/user/login`, {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Access-Control-Allow-Origin': '*'
+                },
                 body: JSON.stringify({ email, password })
             })
             const json = await response.json();
