@@ -15,6 +15,7 @@ export const useLogin = () => {
 
         try {
             const response = await fetch(`${API}/api/user/login`, {
+                mode: 'no-cors',
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
