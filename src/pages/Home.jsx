@@ -5,14 +5,12 @@ import { useWorkoutsContext } from "../hooks/useWorkoutsContext";
 import { useAuthContext } from "../hooks/useAuthContext";
 import { CiMinimize1 } from "react-icons/ci";
 import { IoMdAdd } from "react-icons/io";
-import ErrorPage from "./ErrorPage";
 import API from "../../api";
 
 function Home() {
     const { workouts, dispatch } = useWorkoutsContext();
     const { user } = useAuthContext();
     const [open, setOpen] = useState(false);
-    const [fetchError, setFetchError] = useState(null);
 
     const triggerForm = () => {
         setOpen(!open);
@@ -32,9 +30,7 @@ function Home() {
                     dispatch({ type: 'SET_WORKOUTS', payload: json })
                 }
             } catch (error) {
-                setFetchError(error);
                 console.log(error);
-                console.log(JSON.parse(error));
             }
         }
         if (user) {
@@ -45,11 +41,6 @@ function Home() {
     return (
         <>
             {
-                fetchError &&
-                <ErrorPage />
-            }
-            {
-                !fetchError &&
                 <div className="max-sm:flex-col max-sm:space-x-0  sm:justify-center space-y-5 flex space-x-5 p-5 bg-lite min-h-[calc(100vh-4rem)]">
                     {
                         workouts &&
