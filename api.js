@@ -1,3 +1,3 @@
-const API = "https://workout-mern-backend-ohg1fwteu-pratap-kumar1s-projects.vercel.app";
+const API = "http://localhost:4000";
 
 export default API;

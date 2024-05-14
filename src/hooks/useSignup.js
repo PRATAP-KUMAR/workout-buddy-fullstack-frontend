@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useAuthContext } from "./useAuthContext";
+import API from "../../api";
 
 export const useSignup = () => {
     const [error, setError] = useState(null);

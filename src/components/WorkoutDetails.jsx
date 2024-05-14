@@ -2,6 +2,7 @@ import { useWorkoutsContext } from "../hooks/useWorkoutsContext";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { formatDistanceToNow } from 'date-fns/formatDistanceToNow';
 import { useAuthContext } from "../hooks/useAuthContext";
+import API from "../../api";
 
 function WorkoutDetails(props) {
     const { dispatch } = useWorkoutsContext();

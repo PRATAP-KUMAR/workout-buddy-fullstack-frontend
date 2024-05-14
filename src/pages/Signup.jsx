@@ -1,42 +1,19 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useSignup } from '../hooks/useSignup';
-import ErrorPage from './ErrorPage';
-import API from '../../api';
 
 function Signup() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const { signup, error, isLoading } = useSignup();
 
-    const [Error, setError] = useState(null);
-
     const handleSubmit = async (e) => {
         e.preventDefault();
         await signup(email, password);
     }
 
-    useEffect(() => {
-        const checkBackend = async () => {
-            try {
-                const response = await fetch(`${API}/api/test/`, {
-                    mode: 'no-cors'
-                });
-                const json = await response.json();
-                console.log(json.message);
-            } catch (error) {
-                setError(error);
-            }
-        }
-        checkBackend();
-    }, [])
-
     return (
         <>
             {
-                Error && <ErrorPage />
-            }
-            {
-                !Error &&
                 <div className="flex flex-col min-h-[calc(100vh-4rem)] items-center justify-start 2xl:flex-row">
                     <div className='flex flex-col items-center justify-center 2xl:w-1/3'>
                         <img
