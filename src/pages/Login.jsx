@@ -19,14 +19,14 @@ function Login() {
         const checkBackend = async () => {
             try {
                 const response = await fetch(`${API}/api/test`);
-                const json = response.json();
-                console.log(json);
+                const json = await response.json();
+                console.log(json.message);
             } catch (error) {
                 setFetchError(true);
             }
         }
         checkBackend();
-    })
+    }, [])
 
     return (
         <>
