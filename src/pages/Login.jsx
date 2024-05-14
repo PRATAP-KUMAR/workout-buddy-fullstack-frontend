@@ -63,7 +63,7 @@ function Login() {
                             placeholder='Password'
                             className='w-full h-12 pl-2 focus:ring-1 focus:ring-toodark caret-toodark placeholder-dark'
                         />
-                        <button disabled={isLoading} className='button'>
+                        <button disabled={isLoading || fetchError} className='button disabled:cursor-not-allowed'>
                             Login
                         </button>
                         {fetchError && <Error />}
