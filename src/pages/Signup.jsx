@@ -51,6 +51,7 @@ function Signup() {
                         <h1 className='text-2xl font-bold text-toodark'>Signup for Workout Buddy</h1>
                         <input
                             type='email'
+                            autoFocus
                             onChange={(e) => setEmail(e.target.value)}
                             value={email}
                             placeholder='Email'

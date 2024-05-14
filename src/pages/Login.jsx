@@ -51,6 +51,7 @@ function Login() {
                         <h1 className='text-2xl font-bold text-toodark'>Login to Workout Buddy</h1>
                         <input
                             type='email'
+                            autoFocus
                             onChange={(e) => setEmail(e.target.value)}
                             value={email}
                             placeholder='Email'
