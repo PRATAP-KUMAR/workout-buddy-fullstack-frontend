@@ -48,17 +48,17 @@ function WorkoutForm() {
     }
 
     return (
-        <form className="flex flex-col bg-toodark border-t border-dark space-y-3 w-full p-5" onSubmit={handleSubmit}>
-            <h3 className="text-center text-white font-bold font-josefin max-sm:hidden">Add a New Workout</h3>
+        <form className="flex flex-col bg-dark border-t border-dark space-y-3 w-full p-5" onSubmit={handleSubmit}>
+            <h3 className="text-center text-white font-bold font-custom hidden xs:block">Add a New Workout</h3>
             <label className="text-white">Exercise Title</label>
             <select
                 className="border-none outline-none border-dark px-2 py-1"
                 name="workouts"
                 onChange={(e) => setTitle(e.target.value)}>
-                <option defaultValue={""} hidden className="font-josefin px-2 py-1">Select a Workout</option>
+                <option defaultValue={""} hidden className="font-custom px-2 py-1">Select a Workout</option>
                 {
                     gymWorkoutNames.map(workout => (
-                        <option className="font-josefin p-2" value={workout} key={workout}>{workout}</option>
+                        <option className="font-custom p-2" value={workout} key={workout}>{workout}</option>
                     ))
                 }
             </select>
@@ -80,7 +80,7 @@ function WorkoutForm() {
                 value={reps}
                 className="px-2 py-1"
             />
-            <button className="button w-fit mt-5">Add Workout</button>
+            <button className="btn bg-lite hover:bg-toodark hover:text-white  w-fit">Add Workout</button>
             {error && <div className="text-red-500">{error}</div>}
         </form>
     )

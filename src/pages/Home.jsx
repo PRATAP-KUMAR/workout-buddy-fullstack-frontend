@@ -39,16 +39,17 @@ function Home() {
     }, [dispatch, user])
 
     return (
-        <>
+        <div className="bg-[#f9f9f9]">
             {
-                <div className="max-sm:flex-col max-sm:space-x-0  sm:justify-center space-y-5 flex space-x-5 p-5 bg-lite min-h-[calc(100vh-4rem)]">
+                <div className="flex-col xs:flex xs:flex-row min-h-[calc(100vh-4rem)] max-width">
                     {
                         workouts &&
                         <>
-                            <div className="w-full max-sm:block hidden ">
+                            <div className="block xs:hidden bg-lite">
                                 <button onClick={triggerForm} className="btn-blue w-full">
                                     <div className="flex items-center justify-between bg-toodark text-white p-4 font-bold">
-                                        Add a Workout {
+                                        <h3 className="text-center text-white font-bold font-custom">Add a New Workout</h3>
+                                        {
                                             open ?
                                                 <span><CiMinimize1 fontSize={24} /></span>
                                                 :
@@ -56,23 +57,24 @@ function Home() {
                                         }
                                     </div>
                                 </button>
-                                <div className="flex justify-center w-full sm:hidden">
+                                <div className="flex justify-center w-full xs:hidden">
                                     {open && <WorkoutForm />}
                                 </div>
                             </div>
-                            <div className="flex flex-col max-sm:w-full w-3/5 space-y-2">
+                            <div className="flex flex-col space-y-5 bg-lite p-5 xs:w-1/2">
+                                <div className="text-center font-lg text-black font-bold font-custom">Workouts</div>
                                 {workouts && workouts.map((workout) => (
                                     <WorkoutDetails key={workout._id} workout={workout} />
                                 ))}
                             </div>
-                            <div className="max-sm:hidden w-2/5">
-                                <WorkoutForm />
-                            </div>
                         </>
                     }
+                    <div className="hidden xs:flex xs:w-1/2">
+                        <WorkoutForm />
+                    </div>
                 </div>
             }
-        </>
+        </div>
     )
 }
 
