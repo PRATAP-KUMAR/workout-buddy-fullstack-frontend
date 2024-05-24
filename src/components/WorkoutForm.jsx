@@ -48,14 +48,18 @@ function WorkoutForm() {
     }
 
     return (
-        <form className="flex flex-col bg-dark border-t border-dark space-y-3 w-full p-5" onSubmit={handleSubmit}>
-            <h3 className="text-center text-white font-bold font-custom hidden xs:block">Add a New Workout</h3>
+        <form className="flex flex-col bg-toodark space-y-3 w-full p-5 max-xs:pt-0" onSubmit={handleSubmit}>
+            <h3 className="text-center text-white font-bold font-custom hidden xs:block">
+                Add a New Workout
+            </h3>
             <label className="text-white">Exercise Title</label>
             <select
                 className="border-none outline-none border-dark px-2 py-1"
                 name="workouts"
+                defaultValue={""}
+                required
                 onChange={(e) => setTitle(e.target.value)}>
-                <option defaultValue={""} hidden className="font-custom px-2 py-1">Select a Workout</option>
+                <option value={""} disabled className="font-custom px-2 py-1">Select a Workout</option>
                 {
                     gymWorkoutNames.map(workout => (
                         <option className="font-custom p-2" value={workout} key={workout}>{workout}</option>
@@ -65,6 +69,7 @@ function WorkoutForm() {
             <label className="text-white">Load (in Kgs): </label>
             <input
                 type="number"
+                required
                 min={0}
                 max={100}
                 onChange={(e) => setLoad(e.target.value)}
@@ -74,6 +79,7 @@ function WorkoutForm() {
             <label className="text-white">Repetations: </label>
             <input
                 type="number"
+                required
                 min={1}
                 max={20}
                 onChange={(e) => setReps(e.target.value)}

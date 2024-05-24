@@ -23,7 +23,7 @@ function Header() {
                     </div>
                 )}
                 {!user && (
-                    <div className="text-white">
+                    <div className="text-white flex flex-row space-x-5">
                         <Link className="btn" to="/login">Login</Link>
                         <Link className="btn" to="/signup">Signup</Link>
                     </div>

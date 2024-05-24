@@ -48,7 +48,7 @@ function Signup() {
                         </a>
                     </div>
                     <form onSubmit={handleSubmit} className='flex-1 2xl:min-h-[calc(100vh-4rem)] flex flex-col w-full bg-dark px-12 2xl:w-2/3 space-y-5 items-center justify-center mx-auto'>
-                        <h1 className='text-2xl font-bold text-toodark'>Signup for Workout Buddy</h1>
+                        <h1 className='text-2xl font-bold text-lite'>Signup for Workout Buddy</h1>
                         <input
                             type='email'
                             autoFocus
@@ -64,7 +64,7 @@ function Signup() {
                             placeholder='Password'
                             className='w-full h-12 pl-2 focus:ring-1 focus:ring-toodark caret-toodark placeholder-dark'
                         />
-                        <button disabled={isLoading || fetchError} className='button disabled:cursor-not-allowed'>
+                        <button disabled={isLoading || fetchError} className='btn bg-lite text-toodark disabled:cursor-not-allowed'>
                             Signup
                         </button>
                         {fetchError && <Error />}
