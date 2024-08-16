@@ -25,6 +25,7 @@ function Home() {
                     }
                 });
                 const json = await response.json();
+                console.log(json);
 
                 if (response.ok) {
                     dispatch({ type: 'SET_WORKOUTS', payload: json })
@@ -65,8 +66,8 @@ function Home() {
                             <div className="text-center font-lg text-black font-bold font-custom">
                                 Workouts
                             </div>
-                            {workouts.map((workout) => (
-                                <WorkoutDetails key={workout._id} workout={workout} />
+                            {workouts.map((workout, idx) => (
+                                <WorkoutDetails key={`${workout.id} + ${idx}`} workout={workout} />
                             ))}
                         </div>
                     }

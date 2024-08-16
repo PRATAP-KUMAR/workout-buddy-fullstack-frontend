@@ -1,32 +1,15 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useSignup } from '../hooks/useSignup';
-import Error from '../components/Error';
-import API from '../../api';
 
 function Signup() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const { signup, error, isLoading } = useSignup();
 
-    const [fetchError, setFetchError] = useState(false);
-
     const handleSubmit = async (e) => {
         e.preventDefault();
         await signup(email, password);
     }
-
-    useEffect(() => {
-        const checkBackend = async () => {
-            try {
-                const response = await fetch(`${API}/api/test`);
-                const json = await response.json();
-                console.log(json.message);
-            } catch (error) {
-                setFetchError(true);
-            }
-        }
-        checkBackend();
-    }, [])
 
     return (
         <>
@@ -64,10 +47,9 @@ function Signup() {
                             placeholder='Password'
                             className='w-full h-12 pl-2 focus:ring-1 focus:ring-toodark caret-toodark placeholder-dark'
                         />
-                        <button disabled={isLoading || fetchError} className='btn bg-lite text-toodark disabled:cursor-not-allowed'>
+                        <button disabled={isLoading} className='btn bg-lite text-toodark disabled:cursor-not-allowed'>
                             Signup
                         </button>
-                        {fetchError && <Error />}
                         {error && <div className='text-red-500'>{error}</div>}
                     </form>
                 </div >

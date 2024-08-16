@@ -1,6 +1,5 @@
 import { useWorkoutsContext } from "../hooks/useWorkoutsContext";
 import { RiDeleteBin6Line } from "react-icons/ri";
-import { formatDistanceToNow } from 'date-fns/formatDistanceToNow';
 import { useAuthContext } from "../hooks/useAuthContext";
 import API from "../../api";
 import Modal from "./Modal";
@@ -13,21 +12,24 @@ function WorkoutDetails(props) {
     const [modalOpen, setModalOpen] = useState(false);
 
     let obj = props;
-    let { title, load, reps, createdAt, _id } = obj.workout;
+    let { title, load, reps, id } = obj.workout;
+    console.log('workout details', obj);
 
     const removeWorkout = async () => {
         if (!user) return;
 
-        const response = await fetch(`${API}/api/workouts/` + _id, {
+        const response = await fetch(`${API}/api/workouts/${id}`, {
             method: 'DELETE',
             headers: {
                 'Authorization': `Bearer ${user.token}`
             }
         })
         const json = await response.json();
+        console.log(json, 'my id');
 
         if (response.ok) {
-            dispatch({ type: 'DELETE_WORKOUT', payload: json })
+            console.log('my json', json);
+            dispatch({ type: 'DELETE_WORKOUT', payload: json });
         }
     }
 
@@ -36,7 +38,7 @@ function WorkoutDetails(props) {
             <h4>{title}</h4>
             <p>Load (Kg): {load}</p>
             <p>Reps: {reps}</p>
-            <p>{formatDistanceToNow(new Date(createdAt), { addSuffix: true })}</p>
+            {/* <p>{formatDistanceToNow(new Date(createdAt), { addSuffix: true })}</p> */}
             <button className='absolute bottom-1 right-1 hover:text-white text-red-500' onClick={() => setModalOpen(true)}><RiDeleteBin6Line fontSize={24} />
             </button>
             <Modal open={modalOpen} onClose={() => setModalOpen(false)}>

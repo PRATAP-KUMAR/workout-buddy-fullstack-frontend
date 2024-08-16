@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useWorkoutsContext } from "../hooks/useWorkoutsContext";
 import { useAuthContext } from "../hooks/useAuthContext";
 import gymWorkoutNames from "../gym-workout-names";
+import API from "../../api";
 
 function WorkoutForm() {
     const { dispatch } = useWorkoutsContext();
@@ -24,7 +25,7 @@ function WorkoutForm() {
             title, load, reps
         }
 
-        const response = await fetch('http://localhost:4000/api/workouts', {
+        const response = await fetch(`${API}/api/workouts`, {
             method: 'POST',
             body: JSON.stringify(workout),
             headers: {
@@ -32,7 +33,9 @@ function WorkoutForm() {
                 'Authorization': `Bearer ${user.token}`
             }
         })
+
         const json = await response.json();
+
         if (!response.ok) {
             setError(json.error);
         }
@@ -42,7 +45,6 @@ function WorkoutForm() {
             setLoad('');
             setReps('');
             setError(null);
-            console.log('new workout added');
             dispatch({ type: 'CREATE_WORKOUT', payload: json });
         }
     }
