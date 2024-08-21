@@ -33,7 +33,7 @@ export const useSignup = () => {
                 setIsLoading(false);
             }
         } catch (error) {
-            console.log(error);
+            setError(error.message);
         }
     }
 

@@ -47,10 +47,15 @@ function Login() {
                             placeholder='Password'
                             className='w-full h-12 pl-2 focus:ring-1 focus:ring-toodark caret-toodark placeholder-dark'
                         />
-                        <button disabled={isLoading} className='btn bg-lite text-toodark disabled:cursor-not-allowed'>
+                        <button className='btn bg-lite text-toodark disabled:cursor-not-allowed'>
                             Login
                         </button>
-                        {error && <div className='text-red-500 font-bold'>{error}</div>}
+                        {error && <div className='text-red-500 font-bold'>{error + ', '}
+                            <span>
+                                {error === "Failed to fetch" ? (<a href='https://github.com/PRATAP-KUMAR/workout-buddy-fullstack-backend' target="_blank" rel='noreferrer' className='text-white'>Look here for Backend Instructions</a>) : null}
+                            </span>
+                        </div>
+                        }
                     </form>
                 </div >
             }
